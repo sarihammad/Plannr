@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <!--  Action Bar  -->
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorOnSecondary"
+            android:orientation="horizontal"
+            android:padding="15dp"
+            android:gravity="center_vertical">
+
+        <!--  Back Button  -->
+        <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="clickBack"
+                android:src="@drawable/ic_back_arrow"
+                android:tint="?attr/colorOnPrimary"
+                android:contentDescription="@string/back"/>
+
+        <!--  Add Expense Text  -->
+        <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/add_expense"
+                android:textSize="25sp"
+                android:textColor="?attr/colorOnPrimary"
+                android:fontFamily="@font/roboto_mono_bold"
+                android:textStyle="bold"
+                android:layout_marginStart="15dp"
+                android:gravity="start"/>
+
+        <!--  Save Button  -->
+        <ImageView
+                android:id="@+id/iv_save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_done"
+                android:tint="?attr/colorOnPrimary"
+                android:contentDescription="@string/save"
+                android:onClick="clickSaveExpense"/>
+
+    </LinearLayout>
+
+    <!-- Add Expense Name -->
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="50dp">
+
+        <ImageView
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_label"
+                android:layout_marginEnd="20dp"
+                android:contentDescription="@string/name"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/add_expense_name"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                app:boxBackgroundColor="@color/transparent"
+
+                app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/add_name"
+                    android:inputType="text"
+                    />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <!--  Add Expense Amount  -->
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="25dp">
+
+        <ImageView
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_money"
+                android:layout_marginEnd="20dp"
+                android:contentDescription="@string/name"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/add_expense_amount"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                app:boxBackgroundColor="@color/transparent"
+                app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/add_amount"
+                    android:inputType="numberDecimal"
+                    />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+</LinearLayout>
